@@ -107,10 +107,10 @@ class Sprite
 		}
 	}
 
-	draw(cxt)
+	draw(cxt, cameraPerson)
 	{
-		const x = this.gameObject.x - 8;
-		const y = this.gameObject.y - 18;
+		const x = this.gameObject.x - 8 + utils.withGrid(10.5) - cameraPerson.x;
+		const y = this.gameObject.y - 18 + utils.withGrid(6) - cameraPerson.y;
 
 		this.isShadowLoaded && cxt.drawImage(this.shadow, x, y);
 
